@@ -1,0 +1,26 @@
+//create and running a java Maven Project from the Command Line
+$Maven> mvn -B archetype:generate -DgroupId=lis.vitor -DartifactId=cli-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+
+//compile the .java classes to .class byte-code
+$ cli-app> mvn compile
+
+//package the the byte-code to a jar
+$ cli-app> mvn package
+
+//Summary: we can adding some lifecycle in the same command
+$ cli-app> mvn clean compile package
+
+//Running the jar file (NOTE: we need the Maven JAR plugin)
+$ cli-app> java -jar .\target\cli-app-1.0-SNAPSHOT.jar
+
+
+
+
+
+
+References:
+=> CLI
+https://www.sohamkamani.com/java/cli-app-with-maven/
+
+=> JUnit 5
+https://mkyong.com/junit5/junit-5-maven-examples/
