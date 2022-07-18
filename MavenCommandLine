@@ -1,5 +1,5 @@
 //create and running a java Maven Project from the Command Line
-$Maven> mvn -B archetype:generate -DgroupId=lis.vitor -DartifactId=cli-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+$WorkingDirectory> mvn -B archetype:generate -DgroupId=lis.vitor -DartifactId=cli-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
 
 //compile the .java classes to .class byte-code
 $ cli-app> mvn compile
@@ -24,3 +24,6 @@ https://www.sohamkamani.com/java/cli-app-with-maven/
 
 => JUnit 5
 https://mkyong.com/junit5/junit-5-maven-examples/
+
+=> Multi modules
+https://www.baeldung.com/maven-multi-module
