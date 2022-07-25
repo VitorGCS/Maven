@@ -1,0 +1,25 @@
+//Simple Compilation
+$ JavaMavenInspect> javac -d .\java_cli\classes\ .\java_cli\src\HelloWorld.java
+
+//Run the program
+$ JavaMavenInspect> java -classpath .\java_cli\classes\ HelloWorld
+
+
+######################################################	    Executable .jar 	######################################################
+//Generate a .jar
+$ JavaMavenInspect\java_cli\classes> jar cfe HelloWorld.jar HelloWorld .\HelloWorld.class
+
+//Run the jar
+$ JavaMavenInspect\java_cli\classes> java -jar .\HelloWorld.jar
+
+
+==>> Using a third part .jar => In a compilation and execution I have to reference the .jar
+//Compilation
+$ JavaMavenInspect> javac -d .\java_cli\classes\ -cp ".\java_cli\ThirdPartyLibraries\commons-lang3-3.12.0.jar" .\java_cli\src\UsingExternalJar.java
+
+//Executation
+$ JavaMavenInspect> java -cp ".\java_cli\classes;.\java_cli\ThirdPartyLibraries\commons-lang3-3.12.0.jar" UsingExternalJar
+
+//NOTE: commented out some code to run in IDEA - otherwise I would have to add this Library to the project classPath
+
+//Create a jar and use in my program

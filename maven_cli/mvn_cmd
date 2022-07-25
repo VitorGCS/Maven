@@ -1,19 +1,24 @@
 //create and running a java Maven Project from the Command Line
 $WorkingDirectory> mvn -B archetype:generate -DgroupId=lis.vitor -DartifactId=cli-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
 
-//compile the .java classes to .class byte-code
-$ cli-app> mvn compile
+//clean: delete the target folder
+$ maven_cli> mvn clean
 
-//package the the byte-code to a jar
-$ cli-app> mvn package
+//compile: .java (java code) => .class (byte-code)
+$ maven_cli> mvn compile
+
+//package: .class (byte-code) => .jar (package)
+$ maven_cli> mvn package
 
 //Summary: we can adding some lifecycle in the same command
-$ cli-app> mvn clean compile package
+$ maven_cli> mvn clean compile package
 
 //Running the jar file (NOTE: we need the Maven JAR plugin)
-$ cli-app> java -jar .\target\cli-app-1.0-SNAPSHOT.jar
+$ maven_cli> java -jar .\target\cli-app-1.0-SNAPSHOT.jar
 
 
+Search
+mvn dependency:tree
 
 
 
