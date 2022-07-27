@@ -23,3 +23,8 @@ $ JavaMavenInspect> java -cp ".\java_cli\classes;.\java_cli\ThirdPartyLibraries\
 //NOTE: commented out some code to run in IDEA - otherwise I would have to add this Library to the project classPath
 
 //Create a jar and use in my program
+$ JavaMavenInspect\java_cli> javac -d .\classes\ .\myLib\mathLibrary\MathOperations.java
+$ JavaMavenInspect\java_cli\classes> jar cf ..\myLib\mathOp.jar .\mathLibrary\MathOperations.clas
+$ JavaMavenInspect\java_cli> javac -d .\classes\ -cp ".\myLib\mathOp.jar" .\src\UsingInternalJar.java
+$ JavaMavenInspect\java_cli> java -cp ".\classes;.\myLib\mathOp.jar" UsingInternalJar
+
