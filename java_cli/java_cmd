@@ -22,9 +22,61 @@ $ JavaMavenInspect> java -cp ".\java_cli\classes;.\java_cli\ThirdPartyLibraries\
 
 //NOTE: commented out some code to run in IDEA - otherwise I would have to add this Library to the project classPath
 
+######################################################	    Create and use libraries 	######################################################
 //Create a jar and use in my program
 $ JavaMavenInspect\java_cli> javac -d .\classes\ .\myLib\mathLibrary\MathOperations.java
 $ JavaMavenInspect\java_cli\classes> jar cf ..\myLib\mathOp.jar .\mathLibrary\MathOperations.clas
 $ JavaMavenInspect\java_cli> javac -d .\classes\ -cp ".\myLib\mathOp.jar" .\src\UsingInternalJar.java
 $ JavaMavenInspect\java_cli> java -cp ".\classes;.\myLib\mathOp.jar" UsingInternalJar
+
+
+//Using copy Module ==> Clean Code !
+$ JavaMavenInspect\java_cli> javac -d .\classes\ .\src\ubCleanCode\ocp\copyModule\*.java
+$ JavaMavenInspect\java_cli\classes> jar cf ..\myLib\Copy.jar .\ubCleanCode\ocp\copyModule\*.class
+$ JavaMavenInspect\java_cli> javac -d .\classes\ -cp ".\myLib\Copy.jar" .\src\ubCleanCode\ocp\copyModuleExtended\*.java
+$ JavaMavenInspect\java_cli> java -cp ".\classes;.\myLib\Copy.jar" ubCleanCode.ocp.copyModuleExtended.Demo
+
+
+######################################################	    Execute Unit tests 	######################################################
+//Creating a Unit Test standAlone and running with Junit ("Linux commands")
+// https://www.baeldung.com/junit-run-from-command-line
+$ JavaMavenInspect\java_cli> javac -d ./classes/ -cp ./ThirdPartyLibraries/junit-platform-console-standalone-1.8.2.jar src/StandAloneUnitTest.java
+$ JavaMavenInspect\java_cli> java -jar ./ThirdPartyLibraries/junit-platform-console-standalone-1.8.2.jar -cp ./classes --select-class StandAloneUnitTest
+
+
+######################################################	    Check dependencies .jar 	######################################################
+// jdeps => Java Dependency Analysis ToolAnalyse - dependencies in a .jar
+$ JavaMavenInspect\java_cli> jdeps .\ThirdPartyLibraries\commons-lang3-3.12.0.jar
+
+
+TODO:
+
+
+#################	SECOND EXAMPLE - behavioralPatterns.Observer	#################
+$ DesignPatterns> javac -d .\classes\ .\src\behavioralPatterns.Observer\*.java
+
+$ DesignPatterns> java -classpath .\classes\ behavioralPatterns.Observer.MainProgram
+
+
+
+######################################################################################################
+NEXT:
+1) Implementing the CreationalPatterns.Singleton Pattern - in development......
+
+2) Create a separate jar, and add to my running program like dependency
+3) Adding Threads to the behavioralPatterns.Observer pattern
+4) Search for UML plugins to generate sequence or comunication diagrams and packages diagrams
+
+Search:
+- java memory leak
+
+Resources:
+https://medium.com/javarevisited/how-to-generate-sequence-diagrams-in-intellij-e2bb7cec2b0b
+
+//Youtube Interesting
+https://www.youtube.com/channel/UCN4eLczj_MQLcz7NjIwcKEQ/videos
+
+//Threads
+https://www.eginnovations.com/blog/java-threads/
+
 
