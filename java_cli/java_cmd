@@ -1,9 +1,10 @@
 //Simple Compilation
-$ JavaMavenInspect> javac -d .\java_cli\classes\ .\java_cli\src\HelloWorld.java
+windows$ root_folder> javac -d .\java_cli\classes\ .\java_cli\src\HelloWorld.java
+linux  $ root_folder> javac -d ./java_cli/classes/ ./java_cli/src/HelloWorld.java
 
 //Run the program
-$ JavaMavenInspect> java -classpath .\java_cli\classes\ HelloWorld
-
+windows$ root_folder> java -classpath .\java_cli\classes\ HelloWorld
+linux  $ root_folder> java -classpath ./java_cli/classes/ HelloWorld
 
 ######################################################	    Executable .jar 	######################################################
 //Generate a .jar
