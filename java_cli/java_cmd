@@ -8,11 +8,12 @@ linux  $ root_folder> java -classpath ./java_cli/classes/ HelloWorld
 
 ######################################################	    Executable .jar 	######################################################
 //Generate a .jar
-$ JavaMavenInspect\java_cli\classes> jar cfe HelloWorld.jar HelloWorld .\HelloWorld.class
+$ root_folder\java_cli\classes> jar cfe HelloWorld.jar HelloWorld .\HelloWorld.class
+linux $ root_folder/java_cli/classes> jar cf myJar.jar ./HelloWorld.class
 
 //Run the jar
-$ JavaMavenInspect\java_cli\classes> java -jar .\HelloWorld.jar
-
+$ root_folder\java_cli\classes> java -jar .\HelloWorld.jar
+linux $ root_folder/java_cli/classes> java -classpath myJar.jar HelloWorld
 
 ==>> Using a third part .jar => In a compilation and execution I have to reference the .jar
 //Compilation
